@@ -1,14 +1,13 @@
-int symbolNewtona(int n, int k) {
-  int* tab = new int[n + 1];
-  tab[0] = 1;
-  tab[1] = 0;
-  for (int i = 1; i < n; i++) {
-    for (int j = i; j > 0; j--) {
-      tab[j] = tab[j] + tab[j - 1];
-    }
-    tab[i + 1] = 0;
-  }
-  int wynik = tab[k];
-  delete tab;
-  return wynik;
-}
+def Newton( n, k ):
+ 
+Wynik = 1
+for i in range( 1, k+1 ):
+Wynik = Wynik * ( n - i + 1 ) / i
+return Wynik
+ 
+t = int( raw_input() )
+ 
+for i in range(t):
+n,k = map( int, raw_input().split() )
+if k == 0 or k == n : print '1'
+else : print Newton(n,k)
