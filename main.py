@@ -1,3 +1,5 @@
+import match as n
+
 def Newton( n, k ):
  
 Wynik = 1
